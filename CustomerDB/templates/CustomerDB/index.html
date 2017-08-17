@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contracts</title>
+</head>
+
+    <a href="/customerdb"> <h1 style="color:blue">LOGO</h1> </a>
+    <h3>CustBase</h3>
+    {% if contracts_list %}
+    <body>
+    Hint: select a Product or Customer to filter
+
+    <ul>
+    {% for contract in contracts_list %}
+        <li> Contract: <a href="{% url 'CustomerDB:cust_detail' contract.contract_id %}">  {{ contract.contract_id }}</a>
+            for Customer: <a href="{% url 'CustomerDB:cust_contr' contract.customer_id %}">  {{ contract.customer }}</a>
+            and product: <a href="{% url 'CustomerDB:prod_contr' contract.product_id %}">  {{ contract.product }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+
+    </body>
+    </html>
+    {% else %}
+        <p>No contracts are available.</p>
+
+    {% endif %}
+
+ <br/>
+ <br/>
+  <a href="/" title="Back to the Home page"><b>HOME</b></a> | <a href="#" title="To the top of this page"><b>BACK TO TOP</b></a>

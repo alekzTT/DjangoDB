@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+
+<a href="/customerdb"> <h1 style="color:blue">LOGO</h1> </a>
+<h3>CustBase</h3>
+
+<body>
+    for Customer: {{ cust_name }}  and product:  {{prod_name }}
+    <br/>
+    <br/>
+    {% if cluster_list %}
+        <ul>
+        {% for cluster in cluster_list %}
+            <li>Cluster: {{ cluster.cluster_name }} </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        No clusters exist...
+    {% endif %}
+</body>
+
+ <br/>
+ <br/>
+  <a href="/customerdb" title="Back to the Home page"><b>HOME</b></a> | <a href="#" title="To the top of this page"><b>BACK TO TOP</b></a>
+
+
+
+
+
+</html>

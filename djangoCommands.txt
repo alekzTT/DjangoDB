@@ -1,0 +1,17 @@
+#or the relevant Virtual Environment you have pip-installed Django and python "3.4.0" is used for this project
+$>workon "CustBase"
+
+#emmmmm run the server ?? daaaa !!!
+$>python manage.py runserver
+
+#clear all migrations and delete DB
+
+$> find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+$> find . -path "*/migrations/*.pyc"  -delete
+
+$> python manage.py makemigrations
+$> python manage.py migrate
+
+#If you drop DB have to create admin user again
+>python manage.py createsuperuser --username=admin --email=admin@example.com
+
